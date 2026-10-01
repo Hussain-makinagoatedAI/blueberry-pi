@@ -2,6 +2,13 @@
 
 A technically verified AI research project targeting a 10-trillion-parameter architecture.
 
+## Quick Links
+
+- [Project Brief](PROJECT.md) — project overview, technical readiness, and roadmap
+- [Compute Sponsorship](SPONSORSHIP.md) — compute sponsorship requirements and ownership structure
+- [Contact](CONTACT.md) — sponsorship discussion and contact path
+- [GitHub Discussions](../../discussions) — public project and sponsorship discussion
+
 ## Current Status
 
 **Project state:** TRAINING-READY / BLOCKED_EXTERNAL_RESOURCE
@@ -19,27 +26,40 @@ A technically verified AI research project targeting a 10-trillion-parameter arc
 | Initial compute target | 8× H100 80GB-class |
 | Owner compute cost | $0 |
 
-> **Important:** The verified 10T architecture must not be confused with a trained 10T model. The current trained model contains 10,786,944 parameters. Real 10T trained weights require large-scale external compute.
+> **Important:** The verified 10T architecture must not be confused with a trained 10T model. The current genuinely trained model contains 10,786,944 parameters. Real 10T trained weights require large-scale external compute.
 
 ## What Is Blueberry Pi?
 
-Blueberry Pi / OUR AI is an experimental AI project focused on building and evaluating a highly capable large-scale model and its supporting training, evaluation, and agent infrastructure.
+Blueberry Pi / OUR AI is an experimental AI research project focused on developing and evaluating a highly capable large-scale AI system and the infrastructure required to train, evaluate, and scale it.
 
-The project is being developed with an emphasis on reproducibility, verification, checkpoint integrity, transparent evaluation, and strict separation between configured architecture and genuinely trained weights.
+The project emphasizes:
+
+- reproducibility
+- transparent reporting
+- checkpoint integrity
+- measurable evaluation
+- data provenance
+- explicit separation between architecture and trained weights
 
 ## What Has Been Completed
 
-- Verified 10T architecture
-- Exact parameter-count verification
+The project has completed substantial engineering and readiness work, including:
+
+- verified large-scale model architectures
+- exact parameter-count verification
 - MoE routing and active-parameter verification
-- 500,000-token vocabulary
-- Large-scale data preparation and provenance tracking
-- Training and checkpoint infrastructure
-- Resume and integrity protections
-- Distributed training preparation
-- Benchmark/evaluation infrastructure
-- Reproducible local and dry-run validation
-- Training progression from 200M through the 10T target
+- training infrastructure
+- checkpoint save/load and integrity protections
+- resume compatibility
+- RNG restoration
+- distributed-training preparation
+- data preparation and provenance tracking
+- tokenizer development and evaluation
+- benchmark/evaluation infrastructure
+- progression gates
+- reproducible local validation
+- dry-run training progression
+- sponsorship and compute-acquisition documentation
 
 ## Current Trained Baseline
 
@@ -49,23 +69,25 @@ The current genuinely trained Blueberry Pi model contains:
 
 This baseline is preserved and SHA-pinned.
 
-All larger model stages are currently architecture/configuration targets and have **not** been represented as trained models.
+Larger model stages are currently architecture/configuration targets and have not been represented as trained models.
 
-## 10T Architecture
+## Verified 10T Architecture
 
-The verified target architecture contains exactly:
+The target 10T architecture has been live-constructed and exactly parameter-count verified.
 
-**10,111,341,735,936 total parameters**
+### Total Parameters
 
-with:
+**10,111,341,735,936**
 
-**325,258,752,000 active parameters per token**
+### Active Parameters per Token
 
-The architecture has been live-constructed and independently parameter-count verified.
+**325,258,752,000**
+
+The architecture includes the project's large-scale MoE configuration and is intended for distributed training on external GPU infrastructure.
 
 ## Data & Tokenizer
 
-The current measured data inventory contains approximately:
+The currently measured data inventory contains approximately:
 
 **8.72 billion tokens**
 
@@ -73,16 +95,20 @@ The project uses the frozen:
 
 **bpe-500k-v1**
 
-tokenizer with exactly **500,000 vocabulary entries**.
+tokenizer with exactly:
 
-The data pipeline includes deduplication, contamination screening, domain balancing, provenance tracking, and SHA-verified manifests.
+**500,000 vocabulary entries**
+
+The data pipeline includes documented deduplication, contamination screening, domain balancing, provenance tracking, and SHA-verified manifests.
+
+The current 8.72B-token inventory is **not** being represented as the eventual 5T-token training supply.
 
 ## Training Infrastructure
 
 The project has prepared infrastructure for:
 
 - distributed training
-- MoE routing
+- mixture-of-experts routing
 - checkpoint save/load
 - checkpoint integrity verification
 - resume compatibility
@@ -96,17 +122,20 @@ The first large-scale training milestone is the **bp-200m** stage.
 
 ## Evaluation
 
-The project includes a benchmark/evaluation system with:
+The project includes a benchmark and evaluation system with:
 
+- benchmark registry
 - version and provenance controls
-- adapter contracts
+- evaluation adapters
 - contamination safeguards
 - reproducible evaluation workflows
-- the project's preserved external benchmark registry
+- checkpoint-based comparisons
 
-External frontier benchmark results have **not** been fabricated or claimed.
+External benchmark results are not claimed unless they have actually been measured.
 
 ## Training Roadmap
+
+The planned progression is:
 
 ```text
 200M
